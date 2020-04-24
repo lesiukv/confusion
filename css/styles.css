@@ -22,7 +22,7 @@ address {
     color:#0f0f0f;
 }
 
-header.jumbotron {
+.jumbotron {
     padding:70px 30px 70px 30px;
     margin:0px auto;
     background-color: #9575CD ;
