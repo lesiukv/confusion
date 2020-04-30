@@ -81,16 +81,12 @@ body{
 
 .modal-header {
     background-color: $background-dark;
+
+    .modal-title, .close, .close:hover, .close:active {
+        color: floralwhite;
+    }
 }
 
 .modal-body {
     background-color: $background-pale;
-}
-
-.modal-title {
-    color: #fff;
-}
-
-.close, .close:hover, .close:active {
-    color: $background-pale;
 }
