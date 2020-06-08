@@ -96,43 +96,43 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        
-                            <div class="form-group row">
-                                <label for="username" class="offset-1">Username</label>
-                                <div class="col-12">
-                                    <input type="text" class="form-control" id="username" name="username"
-                                        placeholder="Username">
-                                </div>
-                            </div>
-                     
-                  
-                            <div class="form-group row">
-                                <label for="registerpassword" class="offset-1">Password</label>
-                                <div class="col-12">
-                                    <input type="text" class="form-control" id="registerpassword" name="registerpassword"
-                                        placeholder="Password">
-                                </div>
-                            </div>
-                       
-                   
-                            <div class="form-group row">
-                                <label for="confirmPassword" class="offset-1">Confirm your password</label>
-                                <div class="col-12">
-                                    <input type="text" class="form-control" id="confirmPassword" name="confirmPassword"
-                                        placeholder="Password">
-                                </div>
-                            </div>
-                 
 
-                        
-                            <div class="form-group row">
-                                <label for="registerEmail" class="offset-1">Email</label>
-                                <div class="col-12">
-                                    <input type="text" class="form-control" id="registerEmail" name="registerEmail"
-                                        placeholder="Email">
-                                </div>
+                        <div class="form-group row">
+                            <label for="username" class="offset-1">Username</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="username" name="username"
+                                    placeholder="Username">
                             </div>
-                       
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="registerpassword" class="offset-1">Password</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="registerpassword" name="registerpassword"
+                                    placeholder="Password">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="confirmPassword" class="offset-1">Confirm your password</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="confirmPassword" name="confirmPassword"
+                                    placeholder="Password">
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group row">
+                            <label for="registerEmail" class="offset-1">Email</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="registerEmail" name="registerEmail"
+                                    placeholder="Email">
+                            </div>
+                        </div>
+
                         <div class="form-row mr-1">
                             <button type="button" class="btn btn-secondary btn-sm ml-auto"
                                 data-dismiss="modal">Cancel</button>
@@ -281,7 +281,11 @@
             </div>
             <div class="col-12 col-sm-6 offset-sm-1">
                 <h5>Map of our Location</h5>
-                <div id="map"></div>
+                <div id="map"><iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d472323.8860633225!2d113.8475072266474!3d22.352482475031337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403e2eda332980f%3A0xf08ab3badbeac97c!2sHong%20Kong!5e0!3m2!1sen!2sua!4v1591645707456!5m2!1sen!2sua"
+                        width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe></div>
+
             </div>
             <div class="col-12 col-sm-11 offset-sm-1">
                 <div class="btn-group" role="group">
@@ -419,24 +423,6 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
     <!-- endbuild -->
-
-    <script>
-        // Initialize and add the map
-        function initMap() {
-          // The location of Uluru
-          var uluru = {lat: -25.344, lng: 131.036};
-          // The map, centered at Uluru
-          var map = new google.maps.Map(
-              document.getElementById('map'), {zoom: 4, center: uluru});
-          // The marker, positioned at Uluru
-          var marker = new google.maps.Marker({position: uluru, map: map});
-        }
-    </script>
-
-    <script async defer>
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5Bj4mWMavvTe3q7doChPtgE8kkAPfn3E&callback=initMap"
-    </script>
-
 </body>
 
 </html>
