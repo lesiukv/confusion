@@ -62,7 +62,7 @@ module.exports = function (grunt) {
 
         clean: {
             build: {
-                src: ['dist/']
+                src: ['docs/']
             }
         },
         imagemin: {
@@ -71,13 +71,13 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: './',
                     src: ['img/*.{png,jpg,gif}'],
-                    dest: 'dist/'
+                    dest: 'docs/'
                 }]
             }
         },
         useminPrepare: {
             foo: {
-                dest: 'dist',
+                dest: 'docs',
                 src: ['contactus.html', 'aboutus.html', 'index.html']
             },
             options: {
@@ -129,17 +129,17 @@ module.exports = function (grunt) {
             release: {
                 files: [{
                     src: [
-                        'dist/js/*.js',
-                        'dist/css/*.css',
+                        'docs/js/*.js',
+                        'docs/css/*.css',
                     ]
                 }]
             }
         },
 
         usemin: {
-            html: ['dist/contactus.html', 'dist/aboutus.html', 'dist/index.html'],
+            html: ['docs/contactus.html', 'docs/aboutus.html', 'docs/index.html'],
             options: {
-                assetsDirs: ['dist', 'dist/css', 'dist/js']
+                assetsDirs: ['docs', 'docs/css', 'docs/js']
             }
         },
 
@@ -149,9 +149,9 @@ module.exports = function (grunt) {
                     collapseWhitespace: true
                 },
                 files: {
-                    'dist/index.html': 'dist/index.html',
-                    'dist/contactus.html': 'dist/contactus.html',
-                    'dist/aboutus.html': 'dist/aboutus.html',
+                    'docs/index.html': 'docs/index.html',
+                    'docs/contactus.html': 'docs/contactus.html',
+                    'docs/aboutus.html': 'docs/aboutus.html',
                 }
             }
         }
