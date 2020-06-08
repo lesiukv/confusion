@@ -10,7 +10,7 @@
     <!-- build:css css/main.css -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+
     <link href="css/styles.css" rel="stylesheet">
     <!-- endbuild -->
 
@@ -34,9 +34,140 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span
                                 class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
+                <span class="navbar-text">
+                    <a id="loginButton">
+                        <span class="fa fa-sign-in"></span> Login
+                    </a>
+                </span>
             </div>
         </div>
     </nav>
+
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close"> &times; </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                                <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3"
+                                    placeholder="Enter email">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                                <input type="password" class="form-control form-control-sm mr-1"
+                                    id="exampleInputPassword3" placeholder="Password">
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto"
+                                data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="reserveatablemodal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Reserve a Table</h4>
+                    <button type="button" class="close"> &times; </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group row">
+                            <label for="numberOfGuests" class="col-md-3 col-form-label">Number of
+                                Guests</label>
+                            <div class="col-12 col-md-9">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="numberOfGuests" id="inlineRadio1"
+                                        value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="numberOfGuests" id="inlineRadio2"
+                                        value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="numberOfGuests" id="inlineRadio3"
+                                        value="option3">
+                                    <label class="form-check-label" for="inlineRadio3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="numberOfGuests" id="inlineRadio4"
+                                        value="option4">
+                                    <label class="form-check-label" for="inlineRadio4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="numberOfGuests" id="inlineRadio5"
+                                        value="option5">
+                                    <label class="form-check-label" for="inlineRadio5">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="numberOfGuests" id="inlineRadio6"
+                                        value="option6">
+                                    <label class="form-check-label" for="inlineRadio6">6</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="section" class="col-md-3 col-form-label">Section</label>
+                            <div class="col-12 col-md-9">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <div class="btn btn-success active">
+                                        <input type="radio" name="section" id="option1" autocomplete="off"
+                                            checked>Non-Smoking
+                                    </div>
+                                    <div class="btn btn-danger">
+                                        <input type="radio" name="section" id="option2" autocomplete="off">Smoking
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="dateAndTime" class="col-md-3 col-form-label">Date and Time</label>
+                            <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" id="date" neme="dateAndTime" placeholder="Date"
+                                    onfocus="this.type='date'" onblur="this.type='text'">
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" id="time" neme="dateAndTime" placeholder="Time"
+                                    onfocus="this.type='time'" onblur="this.type='text'">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <div class="offset-md-3 col-md-10">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto"
+                                    data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-sm ml-1">Reserve</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <header class="jumbotron">
         <div class="container">
@@ -46,8 +177,12 @@
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our
                         lipsmacking creations will tickle your culinary senses!</p>
                 </div>
-                <div class="col-12 col-sm align-self-center">
+                <div class="col-6 col-sm align-self-center">
                     <img src="img/logo.png" class="img-fluid">
+                </div>
+                <div class="col-6 col-sm align-self-center">
+                    <a type="button" role="button" class="btn nav-link btn-sm btn-warning btn-block"
+                        id="reserveATableButton">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -124,7 +259,7 @@
                         </div>
                         <div class="collapse show" id="peter" data-parrent="#accordion">
                             <div class="card-body">
-                                <p class="d-none d-sm-block">Our CEO, Peter, credits his hardworking East Asian
+                                <p class="d-sm-block">Our CEO, Peter, credits his hardworking East Asian
                                     immigrant
                                     parents who
                                     undertook the arduous
@@ -153,7 +288,7 @@
                         </div>
                         <div class="collapse" id="danny" data-parrent="#accordion">
                             <div class="card-body">
-                                <p class="d-none d-sm-block">Our CFO, Danny, as he is affectionately referred to by his
+                                <p class="d-sm-block">Our CFO, Danny, as he is affectionately referred to by his
                                     colleagues,
                                     comes from a long established
                                     family tradition in farming and produce. His experiences growing up on a farm in the
@@ -176,7 +311,7 @@
                         </div>
                         <div class="collapse" id="agumbe" data-parrent="#accordion">
                             <div class="card-body">
-                                <p class="d-none d-sm-block">Blessed with the most discerning gustatory sense, Agumbe,
+                                <p class="d-sm-block">Blessed with the most discerning gustatory sense, Agumbe,
                                     our CTO,
                                     personally ensures that every dish
                                     that we serve meets his exacting tastes. Our chefs dread the tongue lashing that
@@ -200,7 +335,7 @@
                         </div>
                         <div class="collapse" id="alberto" data-parrent="#accordion">
                             <div class="card-body">
-                                <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide
+                                <p class="d-sm-block">Award winning three-star Michelin chef with wide
                                     International
                                     experience
                                     having worked closely with
