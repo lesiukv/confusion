@@ -21,6 +21,10 @@ $('#loginButton').click(function() {
     $('#loginModal').modal('show');
 });
 
+$('#registerButton').click(function() {
+    $('#registerModal').modal('show');
+});
+
 $('.close').click(function() {
     $('.modal').modal('hide');
 });

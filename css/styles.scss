@@ -75,7 +75,7 @@ body{
     z-index: 1;
 }
 
-#loginButton, #accordion .card-header {
+#loginButton, #registerButton, #accordion .card-header {
     cursor: pointer;
 }
 
@@ -91,6 +91,15 @@ body{
     background-color: $background-pale;
 }
 
+#registerButton, #loginButton {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#map {
+    height: 400px; 
+    width: 100%; 
+   }
 
 @media only screen and (max-width: 580px) {
     .carousel-item .img-fluid {
