@@ -1,13 +1,15 @@
 'use strict';
 
 module.exports = function (grunt) {
-
+    // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
+    // Automatically load required Grunt tasks
     require('jit-grunt')(grunt, {
         useminPrepare: 'grunt-usemin'
-    });
+      });
 
+    // Define the configuration for all the tasks
     grunt.initConfig({
         sass: {
             dist: {
@@ -23,7 +25,7 @@ module.exports = function (grunt) {
         browserSync: {
             dev: {
                 bsFiles: {
-                    src: [
+                    src : [
                         'css/*.css',
                         '*.html',
                         'js/*.js'
@@ -39,18 +41,20 @@ module.exports = function (grunt) {
         },
         copy: {
             html: {
-                files: [{
-
+                files: [
+                {
+                    //for html
                     expand: true,
                     dot: true,
                     cwd: './',
                     src: ['*.html'],
                     dest: 'dist'
-                }]
+                }]                
             },
             fonts: {
-                files: [{
-
+                files: [
+                {
+                    //for font-awesome
                     expand: true,
                     dot: true,
                     cwd: 'node_modules/font-awesome',
@@ -62,55 +66,58 @@ module.exports = function (grunt) {
 
         clean: {
             build: {
-                src: ['docs/']
+                src: [ 'dist/']
             }
         },
         imagemin: {
             dynamic: {
                 files: [{
-                    expand: true,
-                    cwd: './',
-                    src: ['img/*.{png,jpg,gif}'],
-                    dest: 'docs/'
+                    expand: true,                  // Enable dynamic expansion
+                    cwd: './',                   // Src matches are relative to this path
+                    src: ['img/*.{png,jpg,gif}'],   // Actual patterns to match
+                    dest: 'dist/'                  // Destination path prefix
                 }]
             }
         },
         useminPrepare: {
             foo: {
-                dest: 'docs',
-                src: ['contactus.html', 'aboutus.html', 'index.html']
+                dest: 'dist',
+                src: ['contactus.html','aboutus.html','index.html']
             },
             options: {
                 flow: {
                     steps: {
                         css: ['cssmin'],
-                        js: ['uglify']
+                        js:['uglify']
                     },
                     post: {
                         css: [{
                             name: 'cssmin',
                             createConfig: function (context, block) {
-                                var generated = context.options.generated;
+                            var generated = context.options.generated;
                                 generated.options = {
-                                    keepSpecialComments: 0,
-                                    rebase: false
+                                    keepSpecialComments: 0, rebase: false
                                 };
-                            }
+                            }       
                         }]
                     }
                 }
             }
         },
 
+        // Concat
         concat: {
             options: {
                 separator: ';'
             },
-
+  
+            // dist configuration is provided by useminPrepare
             dist: {}
         },
 
+        // Uglify
         uglify: {
+            // dist configuration is provided by useminPrepare
             dist: {}
         },
 
@@ -125,33 +132,39 @@ module.exports = function (grunt) {
                 algorithm: 'md5',
                 length: 20
             },
-
+  
             release: {
+            // filerev:release hashes(md5) all assets (images, js and css )
+            // in dist directory
                 files: [{
                     src: [
-                        'docs/js/*.js',
-                        'docs/css/*.css',
+                        'dist/js/*.js',
+                        'dist/css/*.css',
                     ]
                 }]
             }
         },
-
+  
+        // Usemin
+        // Replaces all assets with their revved version in html and css files.
+        // options.assetDirs contains the directories for finding the assets
+        // according to their relative paths
         usemin: {
-            html: ['docs/contactus.html', 'docs/aboutus.html', 'docs/index.html'],
+            html: ['dist/contactus.html','dist/aboutus.html','dist/index.html'],
             options: {
-                assetsDirs: ['docs', 'docs/css', 'docs/js']
+                assetsDirs: ['dist', 'dist/css','dist/js']
             }
         },
 
-        htmlmin: {
-            dist: {
-                options: {
+        htmlmin: {                                         // Task
+            dist: {                                        // Target
+                options: {                                 // Target options
                     collapseWhitespace: true
                 },
-                files: {
-                    'docs/index.html': 'docs/index.html',
-                    'docs/contactus.html': 'docs/contactus.html',
-                    'docs/aboutus.html': 'docs/aboutus.html',
+                files: {                                   // Dictionary of files
+                    'dist/index.html': 'dist/index.html',  // 'destination': 'source'
+                    'dist/contactus.html': 'dist/contactus.html',
+                    'dist/aboutus.html': 'dist/aboutus.html',
                 }
             }
         }
