@@ -66,13 +66,15 @@ body {
 
 #registerButton, #loginButton {
   margin-left: 5px;
-  margin-right: 5px; }
+  margin-right: 5px;
+  color: #D1C4E9; }
 
-#map {
-  height: 400px;
-  width: 100px; }
+#registerButton:hover, #loginButton:hover {
+  color: #ddd; }
 
 @media only screen and (max-width: 580px) {
   .carousel-item .img-fluid {
     align-self: center;
-    filter: blur(5px); } }
+    filter: blur(5px);
+    margin: auto;
+    position: relative !important; } }
